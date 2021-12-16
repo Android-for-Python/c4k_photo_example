@@ -30,11 +30,9 @@ if platform == 'android':
             option = View.SYSTEM_UI_FLAG_VISIBLE
         mActivity.getWindow().getDecorView().setSystemUiVisibility(option)
 else:
-    # Dispose of that nasty red dot
+    # Dispose of that nasty red dot, required for gestures4kivy.
     from kivy.config import Config 
     Config.set('input', 'mouse', 'mouse, disable_multitouch')
-    #Config.set('input', 'mouse', 'mouse, disable_hover')
-
 
 class MyApp(App):
     
