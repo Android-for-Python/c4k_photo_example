@@ -6,7 +6,7 @@ from os.path import join
 class Camera4KivyRecipe(PythonRecipe):
 
     version = '0.0.0'
-    url = 'https://github.com/RobertFlatt/test0/archive/main.zip'
+    url = 'https://github.com/Android-for-Python/Camera4Kivy/archive/refs/heads/main.zip'
     site_packages_name = 'camera4kivy'
 
     depends = ['setuptools']
