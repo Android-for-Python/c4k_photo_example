@@ -37,6 +37,15 @@ else:
 class MyApp(App):
     
     def build(self):
+        self.sm = ScreenManager()
+        self.screens = [HomeScreen0(name='0'),
+                        PhotoScreen1(name='1'),
+                        PhotoScreen2(name='2'),
+                        ScreenShot3(name='3'),
+                        VideoScreen4(name='4')]
+        for s in self.screens:
+            self.sm.add_widget(s)
+
         if platform == 'android':
             Window.bind(on_resize=hide_landscape_status_bar)
             permissions = [Permission.CAMERA, Permission.RECORD_AUDIO]
@@ -46,15 +55,6 @@ class MyApp(App):
             self.enable_swipe = check_permission(Permission.CAMERA)
         else:
             self.enable_swipe = True
-
-        self.sm = ScreenManager()
-        self.screens = [HomeScreen0(name='0'),
-                        PhotoScreen1(name='1'),
-                        PhotoScreen2(name='2'),
-                        ScreenShot3(name='3'),
-                        VideoScreen4(name='4')]
-        for s in self.screens:
-            self.sm.add_widget(s)
         return self.sm
 
     def permissions_callback(self,permissions,grants):

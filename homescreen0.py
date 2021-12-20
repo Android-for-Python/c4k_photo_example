@@ -16,10 +16,32 @@ class HomeScreen0(SwipeScreen):
         else:
             COLS = 40
 
-        text='HOME SCREEN.\n\n' +\
-            fill('Swipe left or right to see 4 other screens, showing ' +\
-                 'photo, screenshot, and video camera layout examples.',
-                 COLS) + '\n\n'
+        if platform == 'macosx':
+            text='HOME SCREEN.\n\n' +\
+                fill('Two finger Swipe left or right to see 4 other screens,'+\
+                     'showing ' +\
+                     'photo, screenshot, and video camera layout examples.',
+                     COLS) + '\n\n'
+        elif platform == 'win':
+            text='HOME SCREEN.\n\n' +\
+                fill('Swipe left or right to see 4 other screens, showing ' +\
+                     'photo, screenshot, and video camera layout examples.' +\
+                     'Swipe is left mouse button with fast mouse move, on ' +\
+                     'pad use one and a half taps and fast move or ' +\
+                     '(experimental) two finger swipe',
+                     COLS) + '\n\n'
+        elif platform == 'linux':
+            text='HOME SCREEN.\n\n' +\
+                fill('Swipe left or right to see 4 other screens, showing ' +\
+                     'photo, screenshot, and video camera layout examples.' +\
+                     'Swipe is left mouse button with fast move.', 
+                     COLS) + '\n\n'
+        else:
+            text='HOME SCREEN.\n\n' +\
+                fill('Swipe left or right to see 4 other screens, showing ' +\
+                     'photo, screenshot, and video camera layout examples.',
+                     COLS) + '\n\n'
+            
         if platform == 'android':
             text+=\
                 fill('Rotate the device to see an alternative layout. Use ' +\
