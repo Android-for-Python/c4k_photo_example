@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,camera4kivy
+requirements = python3,kivy,camera4kivy,gestures4kivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -93,7 +93,7 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-android.permissions = CAMERA, RECORD_AUDIO
+#android.permissions = INTERNET
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
@@ -302,10 +302,10 @@ android.allow_backup = True
 #p4a.source_dir =
 
 # (str) The directory in which python-for-android should look for your own build recipes (if any)
-p4a.local_recipes = ./camerax_provider/recipes
+#p4a.local_recipes =
 
 # (str) Filename to the hook for p4a
-p4a.hook = ./camerax_provider/gradle_options.py
+p4a.hook = camerax_provider/gradle_options.py
 
 # (str) Bootstrap to use for android builds
 # p4a.bootstrap = sdl2
