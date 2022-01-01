@@ -1,7 +1,7 @@
 from kivy.uix.label import Label
 from kivy.utils import platform
 from textwrap import fill
-from swipescreen import SwipeScreen
+from applayout.swipescreen import SwipeScreen
 
 class HomeScreen0(SwipeScreen):
     

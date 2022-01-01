@@ -3,11 +3,11 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager
 from kivy.utils import platform
 
-from homescreen0  import HomeScreen0
-from photoscreen1 import PhotoScreen1
-from photoscreen2 import PhotoScreen2
-from screenshot3 import ScreenShot3
-from videoscreen4 import VideoScreen4
+from applayout.homescreen0  import HomeScreen0
+from applayout.photoscreen1 import PhotoScreen1
+from applayout.photoscreen2 import PhotoScreen2
+from applayout.screenshot3 import ScreenShot3
+from applayout.videoscreen4 import VideoScreen4
 
 if platform == 'android':
     from jnius import autoclass
