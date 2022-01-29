@@ -24,9 +24,9 @@ def before_apk_build(toolchain):
     # Check the current versions of these camera Gradle dependencies here:
     #https://developer.android.com/jetpack/androidx/releases/camera#dependencies
     # and the other packages at https://mvnrepository.com/
-    required_depends = ['androidx.camera:camera-core:1.1.0-alpha11',
-                        'androidx.camera:camera-camera2:1.1.0-alpha11',
-                        'androidx.camera:camera-lifecycle:1.1.0-alpha11',
+    required_depends = ['androidx.camera:camera-core:1.1.0-beta01',
+                        'androidx.camera:camera-camera2:1.1.0-beta01',
+                        'androidx.camera:camera-lifecycle:1.1.0-beta01',
                         'androidx.lifecycle:lifecycle-process:2.4.0',
                         'androidx.core:core:1.6.0']
     existing_depends = []
