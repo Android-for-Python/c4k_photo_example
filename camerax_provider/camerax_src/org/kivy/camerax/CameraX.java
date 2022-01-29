@@ -445,10 +445,9 @@ class CameraX {
                 vcf = new VideoCapture.OutputFileOptions.Builder(cr,
 								 collection,
 								 cv).build();
-		VideoSavedCallback vsc =
-		    new VideoSavedCallback(this.callbackClass);
-		this.videoCapture.startRecording(vcf,executor,vsc);
 	    }
+	    VideoSavedCallback vsc = new VideoSavedCallback(this.callbackClass);
+	    this.videoCapture.startRecording(vcf,executor,vsc);
 	}
     }
 
