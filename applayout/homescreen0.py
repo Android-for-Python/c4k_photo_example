@@ -36,7 +36,7 @@ class HomeScreen0(SwipeScreen):
                      'photo, screenshot, and video camera layout examples.' +\
                      'Swipe is left mouse button with fast move.', 
                      COLS) + '\n\n'
-        else:
+        else: # Android, iOS
             text='HOME SCREEN.\n\n' +\
                 fill('Swipe left or right to see 4 other screens, showing ' +\
                      'photo, screenshot, and video camera layout examples.',
@@ -46,10 +46,17 @@ class HomeScreen0(SwipeScreen):
             text+=\
                 fill('Rotate the device to see an alternative layout. Use ' +\
                      'the buttons to switch between front and back cameras, '+\
-                     'or capture. Touch using pinch/spread gesture for ' +\
+                     'or capture. Use pinch/spread gesture to ' +\
                      'zoom, or tap for focus.' ,COLS) + '\n\n' +\
                 fill('Photo, screen, and video captures are saved to ' +\
                      'DCIM/<appname>/<date>/<time>, as shown in a toast.',COLS)
+        elif platform == 'ios':
+            text+=\
+                fill('Rotate the device to see an alternative layout. Use ' +\
+                     'the buttons to switch between front and back cameras, '+\
+                     'or capture. Use pinch/spread gesture to zoom.' ,
+                     COLS) + '\n\n' +\
+                fill('Photo, and screen captures are saved to Photos App.',COLS)
         else:
             text+=\
                 fill('To simulate the action of rotating a mobile device, ' +\

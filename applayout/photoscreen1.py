@@ -102,7 +102,7 @@ class ButtonsLayout1(RelativeLayout):
         super().__init__(**args)
     
     def on_size(self, layout, size):
-        if platform == 'android': 
+        if platform in ['android', 'ios']: 
             self.ids.photo.min_state_time = 0.3 
         else:
             self.ids.photo.min_state_time = 1

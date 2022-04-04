@@ -98,7 +98,7 @@ class ButtonsLayout3(RelativeLayout):
     def __init__(self, **kwargs):
         Builder.load_string(BL3)
         super().__init__(**kwargs)
-        if platform == 'android':
+        if platform in ['android', 'ios']:             
             self.normal = 'icons/cellphone-screenshot_white.png'
             self.down   = 'icons/cellphone-screenshot_red.png'
         else:
@@ -106,7 +106,7 @@ class ButtonsLayout3(RelativeLayout):
             self.down   = 'icons/monitor-screenshot_red.png'
   
     def on_size(self, layout, size):
-        if platform == 'android': 
+        if platform in ['android', 'ios']:             
             self.ids.screen.min_state_time = 0.3 
         else:
             self.ids.screen.min_state_time = 1
