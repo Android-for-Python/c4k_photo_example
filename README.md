@@ -28,4 +28,22 @@ Camera4Kivy depends on Buildozer 1.3.0 or later
 
 The example includes a [camera provider](https://github.com/Android-for-Python/camera4kivy#android-camera-provider) and a [buildozer.spec](https://github.com/Android-for-Python/camera4kivy#buildozerspec).
 
+## iOS
+
+`toolchain pip install camera4kivy`
+
+Permission to use the camera and save images is **required** by iOS. To enable permissions edit `<project>-ios/<project-Info.plist`, this file is created by Xcode. These two entries must be added:
+
+To enable use of the Camera add:
+```
+	<key>NSCameraUsageDescription</key>
+	<string> </string>
+```
+To enable saving image captures to the Photos App (the default behavior) add:
+```
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string> </string>
+```
+
+
 
