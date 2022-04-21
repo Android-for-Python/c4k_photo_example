@@ -30,9 +30,9 @@ The example includes a [camera provider](https://github.com/Android-for-Python/c
 
 ## iOS
 
-`toolchain pip install camera4kivy`
+`toolchain pip3 install camera4kivy`
 
-Permission to use the camera and save images is **required** by iOS. To enable permissions edit `<project>-ios/<project-Info.plist`, this file is created by Xcode. These two entries must be added:
+Permission to use the camera and save images is **required** by iOS. To enable permissions edit `<project>-ios/<project-Info.plist`. These two entries must be added:
 
 To enable use of the Camera add:
 ```
