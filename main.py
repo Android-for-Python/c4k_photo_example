@@ -3,6 +3,8 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager
 from kivy.utils import platform
 
+from android_permissions import AndroidPermissions
+
 from applayout.homescreen0  import HomeScreen0
 from applayout.photoscreen1 import PhotoScreen1
 from applayout.photoscreen2 import PhotoScreen2
@@ -11,9 +13,6 @@ from applayout.videoscreen4 import VideoScreen4
 
 if platform == 'android':
     from jnius import autoclass
-    from android.permissions import request_permissions, check_permission, \
-        Permission
-    from android import api_version
     from android.runnable import run_on_ui_thread
     from android import mActivity
     View = autoclass('android.view.View')
@@ -37,6 +36,7 @@ elif platform != 'ios':
 class MyApp(App):
     
     def build(self):
+        self.enable_swipe = False
         self.sm = ScreenManager()
         self.screens = [HomeScreen0(name='0'),
                         PhotoScreen1(name='1'),
@@ -45,20 +45,16 @@ class MyApp(App):
                         VideoScreen4(name='4')]
         for s in self.screens:
             self.sm.add_widget(s)
-
         if platform == 'android':
             Window.bind(on_resize=hide_landscape_status_bar)
-            permissions = [Permission.CAMERA, Permission.RECORD_AUDIO]
-            if api_version < 29:
-                permissions.append(Permission.WRITE_EXTERNAL_STORAGE)        
-            request_permissions(permissions, self.permissions_callback)
-            self.enable_swipe = check_permission(Permission.CAMERA)
-        else:
-            self.enable_swipe = True
         return self.sm
 
-    def permissions_callback(self,permissions,grants):
-        self.enable_swipe = check_permission(Permission.CAMERA)
+    def on_start(self):
+        self.dont_gc = AndroidPermissions(self.start_app)
+
+    def start_app(self):
+        self.dont_gc = None
+        self.enable_swipe = True
 
     def swipe_screen(self, right):
         if self.enable_swipe:

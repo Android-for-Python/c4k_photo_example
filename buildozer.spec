@@ -93,13 +93,13 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = CAMERA, RECORD_AUDIO
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 30
+android.api = 32
 
 # (int) Minimum API your APK will support.
 #android.minapi = 21
