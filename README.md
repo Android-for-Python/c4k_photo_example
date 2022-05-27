@@ -24,7 +24,11 @@ This example depends on Camera4Kivy. **[Read about Camera4Kivy](https://github.c
 
 Camera4Kivy depends on Buildozer 1.3.0 or later
 
-`pip3 install buildozer`
+```
+requirements = python3,kivy,camera4kivy,gestures4kivy
+android.permissions = CAMERA, RECORD_AUDIO
+p4a.hook = camerax_provider/gradle_options.py
+```
 
 The example includes a [camera provider](https://github.com/Android-for-Python/camera4kivy#android-camera-provider) and a [buildozer.spec](https://github.com/Android-for-Python/camera4kivy#buildozerspec).
 
