@@ -5,7 +5,7 @@ Camera4Kivy Photo Example
 
 # Overview
 
-Four screens showing camera orientation, aspect ratio, and image capture. On Android `orientation = all` is available, on the desktop change the window size to change the window from landscape to portrait to simulate rotating a mobile device.
+Four screens showing camera orientation, aspect ratio, and image capture. On mobile devices, rotate the device to see different layouts. On the desktop change the window size to change the window from landscape to portrait to simulate rotating a mobile device.
 
 Available on most of the [usual platforms](https://github.com/Android-for-Python/Camera4Kivy/#tested-examples-and-platforms).
 
