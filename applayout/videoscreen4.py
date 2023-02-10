@@ -4,7 +4,7 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.relativelayout import RelativeLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.utils import platform
-from camera4kivy import Preview
+from camera4kivy import Preview, CameraProviderInfo
 from applayout.swipescreen import SwipeScreen
 from applayout.toast import Toast
 
@@ -95,7 +95,7 @@ BL4 = """
         background_normal: root.normal
         background_down: root.down
 """
-                    
+
 class ButtonsLayout4(RelativeLayout):
 
     normal = StringProperty()
@@ -104,7 +104,8 @@ class ButtonsLayout4(RelativeLayout):
     def __init__(self, **kwargs):
         Builder.load_string(BL4)
         super().__init__(**kwargs)
-        if platform == 'android':
+        self.provider = CameraProviderInfo().get_name()
+        if self.provider in ['android', 'opencv']:
             self.normal = 'icons/video_white.png'
             self.down   = 'icons/video_red.png' 
         else:
@@ -124,7 +125,7 @@ class ButtonsLayout4(RelativeLayout):
             self.ids.video.size_hint = (None, .24)
 
     def video_action(self, state):
-        if platform == 'android':
+        if self.provider in ['android', 'opencv']:
             if state == 'down':
                 self.parent.ids.preview.capture_video()
             else:
@@ -132,6 +133,9 @@ class ButtonsLayout4(RelativeLayout):
 
     def select_camera(self, facing):
         self.parent.ids.preview.select_camera(facing)
+
+
+        
 
     
 
