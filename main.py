@@ -10,6 +10,9 @@ from applayout.photoscreen1 import PhotoScreen1
 from applayout.photoscreen2 import PhotoScreen2
 from applayout.screenshot3 import ScreenShot3
 from applayout.videoscreen4 import VideoScreen4
+from applayout.videoscreen5 import VideoScreen5
+
+from camera4kivy import CameraProviderInfo
 
 if platform == 'android':
     from jnius import autoclass
@@ -43,6 +46,8 @@ class MyApp(App):
                         PhotoScreen2(name='2'),
                         ScreenShot3(name='3'),
                         VideoScreen4(name='4')]
+        if CameraProviderInfo().get_name() in ['picamera2','opencv']:
+            self.screens.append(VideoScreen5(name='5'))
         for s in self.screens:
             self.sm.add_widget(s)
         if platform == 'android':
