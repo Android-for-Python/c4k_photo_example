@@ -3,6 +3,8 @@ Camera4Kivy Photo Example
 
 *Just Basic Camera Stuff, but you gotta start somewhere.*
 
+**2023-11-13 This repository is archived.**
+
 # Overview
 
 Four screens showing camera orientation, aspect ratio, and image capture. On mobile devices, rotate the device to see different layouts. On the desktop change the window size to change the window from landscape to portrait to simulate rotating a mobile device.
